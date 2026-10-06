@@ -8,14 +8,14 @@ Library                   QWeb
 Suite Setup               Open Browser                about:blank                chrome
 Suite Teardown            Close All Browsers
 *** Variables ***
-${FirtName}
-${LastName}
-${FullName}
-${Company}
+#${FirtName}
+#${LastName}
+#${FullName}
+#${Company}
 *** Test Cases ***
 TC1:Lead Cration
     [Documentation]       This Test case is           to validate                the lead creation functionality
-    SF_JWT_Login
+    Appstate              SF_JWT_Login
 
     VerifyText            Leads                       timeout=30
     ClickText             Leads
@@ -58,13 +58,3 @@ TC2:Lead Conversion
 
     ClickText             Cancel and close
     UseModal              Off
-
-
-
-
-
-
-*** Keywords ***
-SF_JWT_Login
-    JWT Authenticate      ${jwt_client_id}            ${username}                ${private_key}
-    JwtLogin              /lightning/page/home
