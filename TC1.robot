@@ -5,6 +5,7 @@ Documentation             New test suite
 Library                   QForce
 Library                   String
 Library                   QWeb
+Resource    resources/Keywors.robot
 Suite Setup               Open Browser                about:blank                chrome
 Suite Teardown            Close All Browsers
 *** Variables ***
