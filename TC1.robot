@@ -67,5 +67,5 @@ TC3: New Campaign page Validations
     ClickText             New                         partial_match=False
     UseModal              ON
     VerifyText            New Campaign
-    VerifyCheckboxStatus                        Active    disabled
+    VerifyCheckboxValue                        Active    on
 
