@@ -55,7 +55,17 @@ TC2:Lead Conversion
     VerifyText            ${FullName}                 anchor=Title:
     #To Verify Opportunity
     VerifyText            Opportunity
-
-
     ClickText             Cancel and close
     UseModal              Off
+
+TC3: New Campaign page Validations
+    [Documentation]    This TC is for validting the New Campaig page
+    [Tags]             Campaign
+    Appstate              SF_JWT_Login
+    VerifyText            Campaigns
+    ClickText             Campaigns    partial_match=False
+    ClickText             New                         partial_match=False
+    UseModal              ON
+    VerifyText            New Campaign
+    VerifyCheckboxStatus                        Active    disabled
+
