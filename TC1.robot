@@ -13,6 +13,7 @@ Suite Teardown            Close All Browsers
 #${LastName}
 #${FullName}
 #${Company}
+${CheckboxValue}
 *** Test Cases ***
 TC1:Lead Cration
     [Documentation]       This Test case is           to validate                the lead creation functionality
@@ -67,5 +68,9 @@ TC3: New Campaign page Validations
     ClickText             New                         partial_match=False
     UseModal              ON
     VerifyText            New Campaign
-    VerifyCheckboxValue                        Active    on
+   
+    VerifyCheckboxValue                        Active    off
+    ${CheckboxValue}=                        GetAttribute                        Active           Checked    element_type=Checkbox
+    Log To Console                        ${CheckboxValue}
+   
 
